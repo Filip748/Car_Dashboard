@@ -1,0 +1,89 @@
+# ==========================================
+# C++ - Skompilowane pliki i obiekty
+# ==========================================
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.exe
+*.out
+*.app
+
+# ==========================================
+# CMake - Pliki i katalogi budowania
+# ==========================================
+# Ignoruj domyślne foldery budowania (warto trzymać się konwencji out-of-source build)
+build/
+build-*/
+out/
+bin/
+
+# Jeśli budujesz w głównym folderze (niezalecane, ale często spotykane)
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# ==========================================
+# Qt - Wygenerowane pliki (MOC, UIC, RCC)
+# ==========================================
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+qmake_qmake_qm_files.qrc
+
+# Pliki konfiguracyjne Qt Creator
+*.pro.user
+*.pro.user.*
+*.qmake.stash
+*.qmake.cache
+
+# ==========================================
+# IDE i Edytory (VS Code, Visual Studio, CLion)
+# ==========================================
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json # Odkomentuj, jeśli chcesz współdzielić ustawienia
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Visual Studio
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# JetBrains (CLion)
+.idea/
+cmake-build-*/
+
+# Inne edytory
+*.swp
+*~
+*.bak
+
+# ==========================================
+# Systemy operacyjne
+# ==========================================
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory
