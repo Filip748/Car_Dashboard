@@ -46,7 +46,7 @@ qmake_qmake_qm_files.qrc
 *.pro.user.*
 *.qmake.stash
 *.qmake.cache
-
+.qtcreator
 # ==========================================
 # IDE i Edytory (VS Code, Visual Studio, CLion)
 # ==========================================

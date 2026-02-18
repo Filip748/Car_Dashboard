@@ -9,13 +9,13 @@ find_package(Qt6 REQUIRED COMPONENTS Quick)
 qt_standard_project_setup(REQUIRES 6.8)
 
 qt_add_executable(appCar_Dashboard
-    main.cpp
+    src/main.cpp
 )
 
 qt_add_qml_module(appCar_Dashboard
     URI Car_Dashboard
     QML_FILES
-        Main.qml
+        src/frontend/Main.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
