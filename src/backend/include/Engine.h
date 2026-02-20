@@ -8,6 +8,8 @@ private:
     bool _isEngineOn;
     float _temperature;
 public:
+    Engine();
+    
     void start();
     void stop();
     void accelerate();
