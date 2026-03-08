@@ -10,7 +10,10 @@ qt_standard_project_setup(REQUIRES 6.8)
 
 qt_add_executable(appCar_Dashboard
     src/main.cpp
+    src/backend/src/Engine.cpp
 )
+
+target_include_directories(appCar_Dashboard PRIVATE src/backend/include)
 
 qt_add_qml_module(appCar_Dashboard
     URI Car_Dashboard

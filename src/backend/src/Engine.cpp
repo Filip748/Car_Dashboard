@@ -1,18 +1,24 @@
 #include "Engine.h"
 
 Engine::Engine() 
-    : _currentRpm(800), _maxRpm(7000), _isEngineOn(false), _temperature(20.0f) {}
+    : _currentRpm(0), _maxRpm(7000), _isEngineOn(false), _temperature(20.0f) {}
 
 void Engine::start() { // do poprawy
-    _isEngineOn = true;
+    if(_isEngineOn == false) {
+        _isEngineOn = true;
+        _currentRpm = 800;
+    }
 }
 
 void Engine::stop() { // do poprawy
-    _isEngineOn = false;
+    if(_isEngineOn == true) {
+        _isEngineOn = false;
+        _currentRpm = 0;
+    }
 }
 
 void Engine::accelerate() {
  // dodac
 }
 
-// zmienic cmake
+// zmienic cmake idk czy dobrze jest
