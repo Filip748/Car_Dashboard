@@ -9,6 +9,7 @@ private:
     Engine _engine;
     CarPhysics _physics;
     bool isGasPressed;
+    bool isBrakePressed;
 public:
     Simulator();
 

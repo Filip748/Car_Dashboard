@@ -14,6 +14,7 @@ public:
     void start();
     void stop();
     void accelerate();
+    void brake();
     void idle();
 
     int getCurrentRpm() const { return _currentRpm; }
