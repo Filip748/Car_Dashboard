@@ -18,7 +18,37 @@ void Engine::stop() { // do poprawy
 }
 
 void Engine::accelerate() {
- // dodac
+    if(_isEngineOn == true) {
+        _currentRpm += 300;
+
+        if(_currentRpm > _maxRpm) {
+            _currentRpm = _maxRpm;
+        }
+
+        if(_temperature < 90.0f) {
+            _temperature += 0.5f;
+        }
+    }
+}
+
+void Engine::brake() {
+    if(_isEngineOn) {
+        _currentRpm -= 400;
+        if(_currentRpm < 800) {
+            _currentRpm = 800;
+        }
+    }
+}
+
+void Engine::idle() {
+    if(_isEngineOn == true) {
+        if(_currentRpm > 800) {
+            _currentRpm -= 100;
+        }
+        else {
+            _currentRpm = 800;
+        }
+    }
 }
 
 // zmienic cmake idk czy dobrze jest

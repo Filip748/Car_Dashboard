@@ -1,12 +1,12 @@
 #ifndef CARPSHISICS_H
 #define CARPHISICS_H
 
-class CarPhisics {
+class CarPhysics {
 private:
     int _currentSpeed;
     int _currentGear;
 public:
-    CarPhisics();
+    CarPhysics();
 
     void update(int engineRpm); // przeliczanie obrotow na predkosc i biegi 
 

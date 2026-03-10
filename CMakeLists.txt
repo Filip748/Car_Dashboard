@@ -11,6 +11,8 @@ qt_standard_project_setup(REQUIRES 6.8)
 qt_add_executable(appCar_Dashboard
     src/main.cpp
     src/backend/src/Engine.cpp
+    src/backend/src/CarPhysics.cpp
+    src/backend/src/Simulator.cpp
 )
 
 target_include_directories(appCar_Dashboard PRIVATE src/backend/include)
