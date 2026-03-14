@@ -10,11 +10,14 @@ private:
     CarPhysics _physics;
     bool isGasPressed;
     bool isBrakePressed;
+
+    void handleAutomaticTransmission();
+
 public:
     Simulator();
 
     void turnOnIgnition();
-    void terunOffIgnition();
+    void turnOffIgnition();
 
     void pressGas();
     void releaseGas();
@@ -26,6 +29,7 @@ public:
     int getSpeed() const { return _physics.getCurrentSpeed(); }
     int getRpm() const { return _engine.getCurrentRpm(); }
     int getGear() const { return _physics.getCurrentGear(); }
+
 };
 
 #endif

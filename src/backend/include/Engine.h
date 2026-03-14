@@ -22,6 +22,8 @@ public:
     bool getIsEngineOn() const { return _isEngineOn; }
     float getTemperature() const { return _temperature; }
 
+    void setCurrentRpm(int rpm) { _currentRpm = rpm; }
+
 };
 
 #endif
