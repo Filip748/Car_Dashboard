@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.16)
 
 project(Car_Dashboard VERSION 0.1 LANGUAGES CXX)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
@@ -10,9 +12,16 @@ qt_standard_project_setup(REQUIRES 6.8)
 
 qt_add_executable(appCar_Dashboard
     src/main.cpp
+
+    src/backend/include/Engine.h
+    src/backend/include/CarPhysics.h
+    src/backend/include/Simulator.h
+    src/backend/include/DashboardController.h
+
     src/backend/src/Engine.cpp
     src/backend/src/CarPhysics.cpp
     src/backend/src/Simulator.cpp
+    src/backend/src/DashboardController.cpp
 )
 
 target_include_directories(appCar_Dashboard PRIVATE src/backend/include)
