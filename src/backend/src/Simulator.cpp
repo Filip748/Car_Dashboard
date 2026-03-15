@@ -38,6 +38,26 @@ void Simulator::handleAutomaticTransmission() {
 }
 
 void Simulator::update() {
+
+    if(!_engine.getIsEngineOn()) {
+        int currentRpm = _engine.getCurrentRpm();
+        if(currentRpm > 0) {
+            _engine.setCurrentRpm(currentRpm - 150);
+            if(_engine.getCurrentRpm() < 0) {
+                _engine.setCurrentRpm(0);
+            }
+        }
+
+        while(_physics.getCurrentGear() > 0) {
+            _physics.shiftDown();
+        }
+
+        _physics.update(_engine.getCurrentRpm());
+
+        return;
+
+    }
+
     if(isGasPressed) {
         _engine.accelerate();
     } else if(isBrakePressed) {

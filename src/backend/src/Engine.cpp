@@ -19,7 +19,7 @@ void Engine::stop() { // do poprawy
 
 void Engine::accelerate() {
     if(_isEngineOn == true) {
-        _currentRpm += 300;
+        _currentRpm += 15;
 
         if(_currentRpm > _maxRpm) {
             _currentRpm = _maxRpm;
@@ -33,7 +33,7 @@ void Engine::accelerate() {
 
 void Engine::brake() {
     if(_isEngineOn) {
-        _currentRpm -= 400;
+        _currentRpm -= 40;
         if(_currentRpm < 800) {
             _currentRpm = 800;
         }
@@ -43,7 +43,7 @@ void Engine::brake() {
 void Engine::idle() {
     if(_isEngineOn == true) {
         if(_currentRpm > 800) {
-            _currentRpm -= 100;
+            _currentRpm -= 5;
         }
         else {
             _currentRpm = 800;

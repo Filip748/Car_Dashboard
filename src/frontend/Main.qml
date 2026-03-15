@@ -2,67 +2,67 @@ import QtQuick
 import QtQuick.Controls
 
 Window {
-    width: 400
+    width: 600
     height: 400
     visible: true
-    title: "Car Simulator"
+    title: "Car Dashboard Simulator"
     color: "#2b2b2b"
-
     Column {
         anchors.centerIn: parent
-        spacing: 20
+        spacing: 30
+
+        Row {
+            spacing: 40
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            CustomGauge {
+                value: controller.rpm
+                maxValue: 8000
+                label: "RPM"
+                gaugeColor: "#e74c3c"
+            }
+
+            CustomGauge {
+                value: controller.speed
+                maxValue: 260
+                label: "km/h"
+                gaugeColor: "#3498db"
+            }
+        }
 
         Text {
-            text: controller.speed + " km/h"
-            font.pixelSize: 48
+            text: "GEAR: " + (controller.gear === 0 ? "N" : controller.gear)
+            font.pixelSize: 24
             font.bold: true
-            color: "white"
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
-        Text {
-            text: controller.rpm + " RPM"
-            font.pixelSize: 24
-            color: "lightgreen"
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
-        Text {
-            text: "Gear: " + controller.gear
-            font.pixelSize: 24
             color: "orange"
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
         Row {
-            spacing: 15
+            spacing: 20
             anchors.horizontalCenter: parent.horizontalCenter
 
             Button {
-                text: "Turn on Engine"
-                onClicked: controller.turnOnIgnition()
+                text: "START/STOP"
+                width: 100
+                height: 50
+                onClicked: controller.rpm > 0 ? controller.turnOffIgnition() : controller.turnOnIgnition()
             }
-            Button {
-                text: "turn off Engine"
-                onClicked: controller.turnOffIgnition()
-            }
-        }
-
-        Row {
-            spacing: 15
-            anchors.horizontalCenter: parent.horizontalCenter
 
             Button {
-                text: "GAS"
-                width: 100
-                height: 60
-                onPressed: controller.pressGas()
-                onReleased: controller.releaseGas()
-            }
-            Button {
-                text: "BREAK"
-                width: 100
+                text: "BREAKE"
+                width: 120
                 height: 60
                 onPressed: controller.pressBrake()
                 onReleased: controller.releaseBrake()
+            }
+
+            Button {
+                text: "GAS"
+                width: 120
+                height: 60
+                onPressed: controller.pressGas()
+                onReleased: controller.releaseGas()
             }
         }
     }

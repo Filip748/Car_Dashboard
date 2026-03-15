@@ -30,6 +30,7 @@ qt_add_qml_module(appCar_Dashboard
     URI Car_Dashboard
     QML_FILES
         src/frontend/Main.qml
+        src/frontend/CustomGauge.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
