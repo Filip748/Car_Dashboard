@@ -8,7 +8,7 @@ private:
 public:
     CarPhysics();
 
-    void update(int engineRpm); // przeliczanie obrotow na predkosc i biegi 
+    void update(int engineRpm); 
 
     void shiftUp();
     void shiftDown();
